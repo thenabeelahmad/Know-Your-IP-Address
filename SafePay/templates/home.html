@@ -1,0 +1,128 @@
+{% extends 'base.html'  %}
+
+{% block head %}
+
+<style type="text/css">
+  .bg-dark
+  {
+    background-color:seagreen!important;
+  }
+
+  li a
+  {
+    font-size: 18px;
+  }
+  .navbar
+  {
+    padding:8px;
+  }
+
+  .navbar-brand
+  {
+    font-size:24px;
+  }
+
+  .btn-outline-success
+  {
+    border-color: white;
+    color:white;
+  }
+</style>
+
+{% endblock head %}
+
+
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">SafePay</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              U.G. FEES
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">B.A.</a></li>
+              <li><a class="dropdown-item" href="#">B.COM</a></li>
+              <li><a class="dropdown-item" href="#">B.COM (H)</a></li>
+              <li><a class="dropdown-item" href="#">B.B.A</a></li>
+              <li><a class="dropdown-item" href="#">B.B.A (MS)</a></li>
+              <li><a class="dropdown-item" href="#">B.VOC(SD&EG)</a></li>
+              <li><a class="dropdown-item" href="#">B.VOC(B&F)</a></li>
+              <li><a class="dropdown-item" href="#">BSC</a></li>
+              <li><a class="dropdown-item" href="#">BCA</a></li>
+
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              P.G. FEES
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">M.A. / M.SC (ANTHROPOLOGY)</a></li>
+              <li><a class="dropdown-item" href="#">M.A. (ENGLISH)</a></li>
+              <li><a class="dropdown-item" href="#">M.A. (GEOGRAPHY)</a></li>
+              <li><a class="dropdown-item" href="#">M.A. (PSYCHOLOGY)</a></li>
+              <li><a class="dropdown-item" href="#">M.COM</a></li>
+              <li><a class="dropdown-item" href="#">M.VOC(SD&EG)</a></li>
+              <li><a class="dropdown-item" href="#">M.VOC(B&F)</a></li>
+
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <ul class="navbar-nav">
+
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'logout' %}">Logout</a>
+          </li>
+    </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="container-fluid mt-5">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="card text-center" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title text-primary">@{{user}}</h5>
+              <p class="card-text">
+
+              <i class="bi bi-person-circle h2 text-primary"></i>
+              </p>
+              <p>{{ip}}</p>
+
+              <a href="#" class="btn btn-primary w-100">{{user.first_name}}
+              {{user.last_name}}</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <!--blank for now-->
+        </div>
+        <div class="col-lg-4">
+          <!--blank for now-->
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+  {%  endblock content %}

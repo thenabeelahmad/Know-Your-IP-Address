@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %} | Account Login   {{ settings.APP_NAME }} {% endblock %}
+
+{% block head %}
+
+<style type="text/css">
+
+.card-header
+{
+  background-color:seagreen!important
+}
+
+.btn:hover
+{
+  background-color: dodgerblue;
+}
+
+.container
+{
+  padding-top: 70px;
+}
+
+body
+{
+  background-color:rgb(0,0,0,0.07);
+}
+
+h4
+{
+  text-align: center !important;
+}
+</style>
+
+{% endblock head %}
+
+{% block content %}
+<section id="login" class=" py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mx-auto">
+          <div class="card">
+            <div class="card-header bg-primary text-white">
+              <h4>
+                <i class="fas fa-sign-in-alt"></i>SafePay Student Login</h4>
+            </div>
+
+            <div class="card-body">
+              <!-- Alerts -->
+                <form action="{% url 'stulogin' %}" method="POST">
+                  {% csrf_token %}
+                <div class="form-group">
+                  <label for="username">Username</label>
+                  <input type="text" name="stuid" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="password2">Password</label>
+                  <input type="password" name="stupass" class="form-control" required>
+                </div>
+                <input type="submit" value="Login" class="btn btn-secondary w-100 btn-block mb-2 mt-4">
+
+              </form>
+              <hr>
+                 <a href="{% url 'login' %}">
+                <button style="float: right;"  class="btn btn-secondary w-100 btn-block mb-2 mt-4">Staff Login</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endblock %}
