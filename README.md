@@ -1,2 +1,4 @@
-# SafePay
-use the code to collect fees
+Know your IP address
+
+user = Admin
+password = 12345
